@@ -1,0 +1,36 @@
+{
+  "name": "spf-test",
+  "private": false,
+  "version": "1.0.6",
+  "type": "module",
+  "author": "spf",
+  "license": "ISC",
+  "description": "",
+  "main": "./dist/spf.umd.js",
+  "module": "./dist/spf.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/spf.es.js",
+      "require": "./dist/spf.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@polkadot/api": "^9.0.1",
+    "web3": "^1.7.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "vite": "^3.0.0",
+    "vue": "^3.2.37"
+  }
+}
