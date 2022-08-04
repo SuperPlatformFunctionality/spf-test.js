@@ -5,15 +5,17 @@ import spf from './../index'
 const activeName = ref('web3')
 const spfWeb3WalletJson = JSON.parse(localStorage.getItem('spf-web3-wallet')) || []
 const dynamicTags = ref([...spfWeb3WalletJson])
+const updateDynamicTags = (value) => {
+    localStorage.setItem('spf-web3-wallet', JSON.stringify(value))
+}
 const handleClose = (index) => {
     dynamicTags.value.splice(index, 1)
+    updateDynamicTags(dynamicTags.value)
 }
-
 const newWallet = () => {
     const wallet = spf.web3NewWallet()
-    console.log(wallet)
     dynamicTags.value.push(wallet)
-    localStorage.setItem('spf-web3-wallet', JSON.stringify(dynamicTags.value))
+    updateDynamicTags(dynamicTags.value)
 }
 </script>
 
@@ -32,8 +34,7 @@ const newWallet = () => {
                             </template>
                             <template #default>
                                 <el-descriptions :column="1" border>
-                                    <el-descriptions-item
-                                        label-align="right" align="center">
+                                    <el-descriptions-item label-align="right" align="center">
                                         <template #label>
                                             <div class="descriptions-label-class">
                                                 address
