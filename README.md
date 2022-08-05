@@ -4,13 +4,13 @@ You can use the SPF.SDK to quickly develop, create wallets, initiate transaction
 
 ## Install
 
-If use npm.
+use npm.
 
 ```
 npm install spf-test
 ```
 
-Or yarn.
+use yarn.
 
 ```
 yarn spf-test
@@ -22,7 +22,9 @@ yarn spf-test
 import spf from 'spf-test'
 
 const wallet = spf.web3NewWallet()
+
 console.log(wallet)
+
 => {
         "account":
         {
